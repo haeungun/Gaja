@@ -1,3 +1,20 @@
-<h1>
-  {{title}}
-</h1>
+<div class="header">
+    ID <input type="email" placeholder="email"> 
+    PW <input type="password" placeholder="password">
+    <button>LOGIN</button>
+</div>
+
+
+<div class="body">
+  <ul class="nav navbar-nav">
+    <li><a routerLink="/sign-up" routerLinkActive="active">SignUp</a></li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer">
+<a routerLink="/home" routerLinkActive="active">
+  <i class="material-icons">home</i>
+</a>
+
+</div>
