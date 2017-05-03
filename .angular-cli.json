@@ -10,7 +10,8 @@
       "assets": [
         "assets",
         "favicon.ico",
-        "manifest.json"
+        "manifest.json",
+        "addtohome.min.js"
       ],
       "index": "index.html",
       "main": "main.ts",
