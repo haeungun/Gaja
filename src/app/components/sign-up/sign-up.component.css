@@ -1,0 +1,29 @@
+.sign-up-field {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #CECECE;
+    margin-bottom: 15px;
+}
+::-webkit-input-placeholder {
+    color: #BEBEBE;
+}
+
+.sign-up-button {
+    width: 50%;
+    margin: auto;
+    margin-top: 30px;
+}
+#btn-sign-up {
+    width: 100%;
+    height: 35px;
+    background-color: #A9C7D7;
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
