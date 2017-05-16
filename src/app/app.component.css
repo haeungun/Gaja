@@ -13,4 +13,9 @@
 a {
     text-decoration: none;
 }
+img {
+    float: left;
+    height: 100%;
+    padding-left: 10px;
+}
 
