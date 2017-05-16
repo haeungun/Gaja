@@ -1,20 +1,19 @@
 <div class="header">
-    ID <input type="email" placeholder="email"> 
-    PW <input type="password" placeholder="password">
-    <button>LOGIN</button>
+  <a href="#">Home</a>
+  <a href="#">Store</a>
 </div>
 
-
-<div class="body">
-  <ul class="nav navbar-nav">
-    <li><a routerLink="/sign-up" routerLinkActive="active">SignUp</a></li>
-  </ul>
-  <router-outlet></router-outlet>
+<div class="background">
+   <img src="../assets/img/background.jpg">
 </div>
 
-<div class="footer">
-<a routerLink="/home" routerLinkActive="active">
-  <span class="glyphicon glyphicon-home"></span>
-  <span class="glyphicon glyphicon-hourglass"></span>
-</a>
+<div class="buttons">
+  <div class="sign-in" (click)="onClick()">
+    <a routerLink="/sign-in" routerLinkActive="active">Sign In</a>
+  </div>
+  <div class="sign-up" (click)="onClick()">
+    <a routerLink="/sign-up" routerLinkActive="active">Sign Up</a>
+  </div>
 </div>
+
+<router-outlet></router-outlet>
