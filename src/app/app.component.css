@@ -1,9 +1,3 @@
-img {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
 .header {
     width: 100%;
     height: 55px;
@@ -16,44 +10,4 @@ img {
     font-size: 1.3em;
     margin-right: 40px;
 }
-.background {
-    width: 100%;
-    height: 250px;
-}
 
-.buttons {
-    width: 100%;
-    height: 65px;
-    background-color: #EAF0F4;
-    color: #BEBEBE;
-    font-size: 1.5em;
-}
-.sign-in {
-    width: 50%;
-    height: 100%;
-    float: left;
-    text-align: center;
-    padding-top: 15px;
-}
-.sign-up {
-    width: 50%;
-    height: 100%;
-    float: right;
-    text-align: center;
-    padding-top: 15px;
-}
-.sign-in a, .sign-up a {
-    color: #BEBEBE;
-    text-decoration: none;
-}
-.sign-in a:link, .sign-up a:link {
-    color: #BEBEBE;
-    text-decoration: none;
-}
-.sign-in a:active, .sign-up a:active {
-    color: #657083;
-    text-decoration: none;
-}
-.sign-in a:hover, .sign-up a:hover {
-    text-decoration: none;
-}
