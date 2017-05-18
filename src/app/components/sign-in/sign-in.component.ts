@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'sign-in',
@@ -7,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  signIn() {
+    let buttons = document.getElementById('buttons');
+    buttons.style.display = 'none';
+    this.router.navigateByUrl('home/my-info');
+  }
   
 }

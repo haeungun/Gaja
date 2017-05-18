@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { StoreComponent } from './components/store/store.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { MyInfoComponent } from './components/my-info/my-info.component';
 
 // Route Configuration
 export const routes: Routes = [
@@ -12,7 +13,7 @@ export const routes: Routes = [
     // redirect to home page on load
     path: '', 
     redirectTo: '/home', 
-    pathMatch: 'full'
+    pathMatch: 'full',
   },{ 
     path: 'home', 
     component: HomeComponent, 
@@ -20,13 +21,16 @@ export const routes: Routes = [
       {
         path: '',
         redirectTo: 'sign-in',
-        pathMatch: 'full'
+        pathMatch: 'full',
       },{ 
         path: 'sign-in', 
         component: SignInComponent, 
       },{ 
           path: 'sign-up', 
-          component: SignUpComponent
+          component: SignUpComponent,
+      },{ 
+          path: 'my-info', 
+          component: MyInfoComponent,
       },
     ]
   },{ 

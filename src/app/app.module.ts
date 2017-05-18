@@ -10,6 +10,7 @@ import { routing } from './app.routes';
 import { HomeComponent } from './components/home/home.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { StoreComponent } from './components/store/store.component';
+import { MyInfoComponent } from './components/my-info/my-info.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { StoreComponent } from './components/store/store.component';
     HomeComponent,
     SignInComponent,
     StoreComponent,
+    MyInfoComponent,
   ],
   imports: [
     BrowserModule,
