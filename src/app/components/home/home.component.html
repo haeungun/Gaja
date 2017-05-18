@@ -2,13 +2,13 @@
    <img src="../assets/img/background.jpg">
 </div>
 
-<div class="buttons">
-  <div class="sign-in" [ngStyle]="{'backgroundColor': status === 'sign-in' ? 'white':'#EAF0F4'}">
-    <a routerLink="sign-in" routerLinkActive="active" (click)="setStatus('sign-in')">Sign In</a>
-  </div>
-  <div class="sign-up" [ngStyle]="{'backgroundColor': status === 'sign-up' ? 'white':'#EAF0F4'}">
-    <a routerLink="sign-up" routerLinkActive="active" (click)="setStatus('sign-up')">Sign Up</a>
-  </div>
+<div id="buttons">
+  <a routerLink="sign-in" routerLinkActive="active" (click)="setStatus('sign-in')">
+    <div id="sign-in" [ngStyle]="setStyle('sign-in')">Sign In</div>
+   </a>
+  <a routerLink="sign-up" routerLinkActive="active" (click)="setStatus('sign-up')">
+    <div id="sign-up" [ngStyle]="setStyle('sign-up')">Sign Up</div>
+  </a>
 </div>
 
 <router-outlet></router-outlet>

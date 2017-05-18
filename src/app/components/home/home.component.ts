@@ -14,10 +14,21 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   setStatus(status) {
     this.status = status;
-    console.log(this.status);
   }
+
+  setStyle(name) {
+    let btn_style = {
+      'background-color': name === this.status ? 'white' : '#EAF0F4',
+      'color': name === this.status ? '#657083' : '#BEBEBE',
+    }
+    console.log("STATUS : " + name , "THIS : " + this.status);
+    console.log(btn_style);
+    return btn_style;
+  }
+
 }

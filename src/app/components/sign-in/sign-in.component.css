@@ -1,5 +1,6 @@
 .login-field {
     width: 65%;
+    max-width: 500px;
     margin: auto;
     margin-top: 75px;
 }
@@ -16,6 +17,7 @@ input {
 
 .login-buttons {
     width: 50%;
+    max-width: 350px;
     margin: auto;
     margin-top: 20px;
 }

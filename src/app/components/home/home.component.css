@@ -10,39 +10,28 @@ img {
     height: 250px;
 }
 
-.buttons {
+#buttons {
     width: 100%;
     height: 65px;
     background-color: #EAF0F4;
     color: #BEBEBE;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
-.sign-in {
+#sign-in {
     width: 50%;
     height: 100%;
     float: left;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 20px;
 }
-.sign-up {
+#sign-up {
     width: 50%;
     height: 100%;
     float: right;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 20px;
 }
-.sign-in a, .sign-up a {
+#sign-in a, #sign-up a {
     color: #BEBEBE;
-    text-decoration: none;
-}
-.sign-in a:link, .sign-up a:link {
-    color: #BEBEBE;
-    text-decoration: none;
-}
-.sign-in a:active, .sign-up a:active {
-    color: #657083;
-    text-decoration: none;
-}
-.sign-in a:hover, .sign-up a:hover {
     text-decoration: none;
 }
