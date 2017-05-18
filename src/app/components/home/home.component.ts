@@ -7,12 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  status;
+
+  constructor() { 
+    this.status = 'sign-in';
+  }
 
   ngOnInit() {
   }
 
-  onclick() {
-    console.log("Hello");
+  setStatus(status) {
+    this.status = status;
+    console.log(this.status);
   }
 }
