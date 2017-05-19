@@ -2,6 +2,7 @@
   <img src="../assets/logo/logo.jpg">
   <a routerLink="/home" routerLinkActive="active">Home</a>
   <a routerLink="/store" routerLinkActive="active">Store</a>
+  <a id="logout" [ngStyle]="isAuth()" (click)="signOut()">Logout</a>
 </div>
 
 <router-outlet></router-outlet>
