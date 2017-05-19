@@ -1,9 +1,9 @@
 <div class="sign-up-field">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Password">
+    <input type="email" placeholder="Email" [(ngModel)]="user.email">
+    <input type="password" placeholder="Password" [(ngModel)]="user.password">
     <input type="tel" placeholder="Tel">
 </div>
 
 <div class="sign-up-button">
-    <button id="btn-sign-up">Sign Up</button>
+    <button id="btn-sign-up" (click)="signUp()">Sign Up</button>
 </div>
