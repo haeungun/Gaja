@@ -24,7 +24,7 @@ export class SignInComponent implements OnInit {
   }
 
   signIn() {
-    //this.auth.signInUser(this.user);
+    this.auth.signInUser(this.user);
     
     let buttons = document.getElementById('buttons');
     buttons.style.display = 'none';
