@@ -2,10 +2,14 @@
     <option *ngFor="let rule of rules" [ngValue]="rule">{{rule}}</option>
 </select>
 
-<div class="sign-up-field">
+<div class="sign-up-field" *ngIf="rule === 'Client'">
     <input type="email" placeholder="Email" [(ngModel)]="user.email">
     <input type="password" placeholder="Password" [(ngModel)]="user.password">
     <input type="tel" placeholder="Tel">
+</div>
+
+<div class="sign-up-field" *ngIf="rule === 'Store'">
+    This is for Store.
 </div>
 
 <div class="sign-up-button">

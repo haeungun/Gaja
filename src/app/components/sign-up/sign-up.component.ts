@@ -15,9 +15,13 @@ import { UserData } from '../../models/user-data.model';
 export class SignUpComponent implements OnInit {
   
   rules = ['Client', 'Store'];
+  rule;
+
   user = new UserData();
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService) { 
+    this.rule = this.rules[0];
+  }
 
   ngOnInit() {
   }
