@@ -1,6 +1,22 @@
 <div class="login-field">
-  <input type="text" placeholder="Email" [(ngModel)]="user.email">
-  <input type="password" placeholder="Password" [(ngModel)]="user.password">
+  <table id="login_table">
+    <tr>
+      <td>
+        <img class="login_icon" src="../../../assets/icon/user.png" alt="user"/>
+      </td>
+      <td>
+        <input type="text" placeholder="Email" [(ngModel)]="user.email">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <img class="login_icon" src="../../../assets/icon/lock.png" alt="lock"/>
+      </td>
+      <td>
+        <input type="password" placeholder="Password" [(ngModel)]="user.password">
+      </td>
+    </tr>
+  </table>
 </div>
 
 <div class="login-buttons">

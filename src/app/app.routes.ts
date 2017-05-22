@@ -12,7 +12,7 @@ export const routes: Routes = [
   { 
     // redirect to home page on load
     path: '', 
-    redirectTo: '/home', 
+    redirectTo: '/home/sign-in', 
     pathMatch: 'full',
   },{ 
     path: 'home', 

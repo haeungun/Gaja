@@ -15,6 +15,14 @@ input {
     color: #BEBEBE;
 }
 
+#login_table {
+    width: 100%;
+}
+
+.login_icon {
+    height: 25px;
+}
+
 .login-buttons {
     width: 50%;
     max-width: 350px;
