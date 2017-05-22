@@ -2,3 +2,33 @@
 * {
     margin: 0;
 }
+
+/* Animation effect when window changed */
+app-root * {
+    animation-duration: .5s;
+    opacity: 0;
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    animation-fill-mode: forwards;
+}
+
+/* Standard syntax */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+

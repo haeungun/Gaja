@@ -5,16 +5,12 @@ import { AuthService } from '../../services/auth.service';
 
 import { UserData } from '../../models/user-data.model';
 
-import { slideInOutAnimation } from '../../animations/index';
 
 @Component({
   selector: 'sign-in',
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.css'],
   providers: [AuthService],
-
-  animations: [slideInOutAnimation],
-  host: { '[@slideInOutAnimation]': '' }
 })
 
 export class SignInComponent implements OnInit {
