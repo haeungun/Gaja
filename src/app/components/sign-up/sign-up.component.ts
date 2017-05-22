@@ -13,7 +13,8 @@ import { UserData } from '../../models/user-data.model';
 })
 
 export class SignUpComponent implements OnInit {
-
+  
+  rules = ['Client', 'Store'];
   user = new UserData();
 
   constructor(private auth: AuthService) { }

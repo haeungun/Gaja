@@ -29,3 +29,26 @@ input {
     border-radius: 20px;
     color: white;
 }
+
+select { 
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+    -moz-appearance: none; 
+    appearance: none; 
+    background: url('../../../assets/icon/down-arrow.png') no-repeat 95% center; /* 화살표 모양의 이미지 */ 
+} 
+/* IE 10, 11의 네이티브 화살표 숨기기 */ 
+select::-ms-expand { display: none; }
+
+#rule-select { 
+    width: 50%; /* 원하는 너비설정 */ 
+    padding: 7px 7px; /* 여백으로 높이 설정 */ 
+    margin-top: 50px;
+    margin-left: 25%;
+    font-family: inherit; /* 폰트 상속 */ 
+    border: 1px solid #CCCCCC; 
+    color: #CCCCCC;
+    border-radius: 4px; 
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+    -moz-appearance: none; 
+    appearance: none; 
+}
