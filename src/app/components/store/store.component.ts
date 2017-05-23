@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreComponent implements OnInit {
 
-  constructor() { }
+  stores = [
+    {
+      name: "FIRST",
+      content: "This is first contents."
+    },{
+      name: "SECOND",
+      content: "This is second contents."
+    }
+  ];
+
+  constructor() { 
+  }
 
   ngOnInit() {
   }

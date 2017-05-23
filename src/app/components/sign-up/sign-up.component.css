@@ -19,7 +19,7 @@ input {
     width: 50%;
     max-width: 350px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 #btn-sign-up {
@@ -43,7 +43,7 @@ select::-ms-expand { display: none; }
 #rule-select { 
     width: 50%;
     padding: 7px 7px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 25%;
     font-family: inherit; 
     border: 1px solid #CCCCCC; 
