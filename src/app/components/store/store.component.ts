@@ -14,6 +14,9 @@ export class StoreComponent implements OnInit {
     },{
       name: "SECOND",
       content: "This is second contents."
+    },{
+      name: "THIRD",
+      content: "This is third contents."
     }
   ];
 
