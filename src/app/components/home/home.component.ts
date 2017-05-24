@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { trigger, state, animate, transition, style } from '@angular/animations';
 
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,12 +15,19 @@ export class HomeComponent implements OnInit {
 
   status;
 
-  constructor() { 
-    this.status = 'sign-in';
+  constructor(private authService: AuthService,
+              private router: Router) {
+                
+                if(this.isAuth()) {
+                  this.router.navigateByUrl('home/my-info');
+                  this.status = 'sign';
+                } else {
+                  this.router.navigateByUrl('home/sign-in');
+                  this.status = 'sign-in';
+                }  
   }
 
   ngOnInit() {
-
   }
 
   setStatus(status) {
@@ -26,11 +35,15 @@ export class HomeComponent implements OnInit {
   }
 
   setStyle(name) {
-    let btn_style = {
+    let btnStyle = {
       'background-color': name === this.status ? 'white' : '#EAF0F4',
       'color': name === this.status ? '#657083' : '#BEBEBE',
     }
-    return btn_style;
+    return btnStyle;
+  }
+
+  isAuth() {
+    return this.authService.isAuthenticated();
   }
 
 }

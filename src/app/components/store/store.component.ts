@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-store',
@@ -20,10 +21,15 @@ export class StoreComponent implements OnInit {
     }
   ];
 
-  constructor() { 
+  constructor(private router: Router) { 
   }
 
   ngOnInit() {
   }
 
+
+  showStoreDetail(aStore) {
+    console.log("A_STORE", aStore);
+    this.router.navigate(['/store-detail'], {queryParams: {store: aStore}});
+  }
 }

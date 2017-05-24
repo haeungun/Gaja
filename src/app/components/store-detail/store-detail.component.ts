@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { StoreData } from '../../models/store-data.model';
 
 @Component({
   selector: 'app-store-detail',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StoreDetailComponent implements OnInit {
 
-  constructor() { }
+  private sub: any;
+  private store;
+
+  constructor(private activatedRoute: ActivatedRoute,
+              private router: Router) { 
+                activatedRoute.queryParams.subscribe(
+                  params => (this.store = params['store']));
+                  console.log(this.store);
+              }
 
   ngOnInit() {
+  }
+
+  ngOnDestroy() {
   }
 
 }

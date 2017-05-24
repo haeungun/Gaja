@@ -12,25 +12,17 @@ import { AuthService } from './services/auth.service';
 
 export class AppComponent {
   
-  constructor(private auth: AuthService,
+  constructor(private authService: AuthService,
               private router: Router) {}
   
   isAuth() {
-    let logout = document.getElementById('logout');
-    if (this.auth.isAuthenticated()) {
-      logout.style.display = "inline";
-    } else {
-      logout.style.display = "none";
-    }
+    return this.authService.isAuthenticated();
   }
 
   signOut() {
     let answer = confirm("Are you sure you want to sign out?");
     if (answer === true) {
-      this.auth.signOutUser();
-
-      let buttons = document.getElementById('buttons');
-      buttons.style.display = 'block';
+      this.authService.signOutUser();
       this.router.navigateByUrl('home/sign-in');
     }
   }
