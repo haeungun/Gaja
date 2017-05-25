@@ -1,8 +1,10 @@
-<div class="header">
-  <img src="../assets/icons/logo.jpg">
+<div id="header">
+  <img id="logo"src="../assets/icons/logo.jpg">
   <a routerLink="/home" routerLinkActive="active">home</a>
   <a routerLink="/store" routerLinkActive="active">store</a>
   <a id="logout" *ngIf="isAuth()" (click)="signOut()">logout</a>
+  <hr>
 </div>
-<hr>
-<router-outlet></router-outlet>
+<div id="home-router">
+  <router-outlet></router-outlet>
+</div>
