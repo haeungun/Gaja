@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router) {
-                
                 if(this.isAuth()) {
                   this.router.navigateByUrl('home/my-info');
                   this.status = 'sign';

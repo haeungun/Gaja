@@ -1,0 +1,25 @@
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+#my-info {
+    margin: auto;
+    margin-top: 80px;
+    margin-bottom: 34px;
+    color: #CCCCCC;
+    text-align: center;
+}
+
+#my-menu {
+    margin: auto;
+}
+
+table#my-menu td {
+    padding: 30px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    color: #CCCCCC;
+    text-align: center;
+}

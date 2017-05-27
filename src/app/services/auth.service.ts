@@ -4,6 +4,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 import { UserData } from '../models/user-data.model';
+import { StoreData } from '../models/store-data.model';
 
 @Injectable()
 export class AuthService {
@@ -32,9 +33,14 @@ export class AuthService {
         this.auth.auth.signOut();
     }
 
-    // Store user information
+    // Save user information
     saveUserData(user: UserData) {
         // TODO: When user sign up, user information should be stored.
+    }
+
+    // Save store information
+    saveStoreData(store: StoreData) {
+        // TODO
     }
 
     // Check if user is currently logged in

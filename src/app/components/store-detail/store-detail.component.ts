@@ -11,16 +11,16 @@ import { StoreData } from '../../models/store-data.model';
 export class StoreDetailComponent implements OnInit {
 
   private sub: any;
-  private store;
+  private storeUid;;
 
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router) { 
                 activatedRoute.queryParams.subscribe(
-                  params => (this.store = params['store']));
-                  console.log(this.store);
+                  params => (this.storeUid = params['store_uid']));
               }
 
   ngOnInit() {
+    console.log(this.storeUid);
   }
 
   ngOnDestroy() {
