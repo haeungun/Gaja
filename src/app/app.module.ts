@@ -22,6 +22,7 @@ import { MyInfoComponent } from './components/my-info/my-info.component';
 import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { StoreDetailComponent } from './components/store-detail/store-detail.component';
+import { WaitingComponent } from './components/waiting/waiting.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { StoreDetailComponent } from './components/store-detail/store-detail.com
     StoreComponent,
     MyInfoComponent,
     StoreDetailComponent,
+    WaitingComponent,
   ],
   imports: [
     BrowserModule,

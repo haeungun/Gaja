@@ -7,6 +7,7 @@ import { StoreDetailComponent } from './components/store-detail/store-detail.com
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { MyInfoComponent } from './components/my-info/my-info.component';
+import { WaitingComponent } from './components/waiting/waiting.component';
 
 // Route Configuration
 export const routes: Routes = [
