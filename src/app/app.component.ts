@@ -26,4 +26,12 @@ export class AppComponent {
       this.router.navigateByUrl('home');
     }
   }
+
+  showComponent() {
+    if(this.isAuth()) {
+      this.router.navigateByUrl('home/my-info');
+    } else {
+      this.router.navigateByUrl('home/sign');
+    } 
+  }
 }

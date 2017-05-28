@@ -15,14 +15,15 @@ export class HomeComponent implements OnInit {
 
   constructor(private authService: AuthService,
               private router: Router) {
-                if(this.isAuth()) {
-                  this.router.navigateByUrl('home/my-info');
-                } else {
-                  this.router.navigateByUrl('home/sign');
-                }      
+                    
   }
 
   ngOnInit() {
+    if(this.isAuth()) {
+      this.router.navigateByUrl('home/my-info');
+    } else {
+      this.router.navigateByUrl('home/sign');
+    }  
   }
 
   isAuth() {
