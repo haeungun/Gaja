@@ -16,11 +16,11 @@ export class StoreDetailComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private router: Router) { 
                 activatedRoute.queryParams.subscribe(
+                  // Get a store uid
                   params => (this.storeUid = params['store_uid']));
               }
 
   ngOnInit() {
-    console.log(this.storeUid);
   }
 
   ngOnDestroy() {

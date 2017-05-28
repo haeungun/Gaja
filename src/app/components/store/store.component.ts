@@ -33,6 +33,7 @@ export class StoreComponent implements OnInit {
 
   showStoreDetail(aStore) {
     console.log("A_STORE", aStore);
+    // Forward store uid
     this.router.navigate(['/store-detail'], {queryParams: {'store_uid': aStore.uid}});
   }
 }

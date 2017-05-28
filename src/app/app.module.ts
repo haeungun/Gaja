@@ -10,30 +10,28 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { AppComponent } from './app.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 import { routing } from './app.routes';
 
 import { HomeComponent } from './components/home/home.component';
-import { SignInComponent } from './components/sign-in/sign-in.component';
 import { StoreComponent } from './components/store/store.component';
+import { StoreDetailComponent } from './components/store-detail/store-detail.component';
 import { MyInfoComponent } from './components/my-info/my-info.component';
+import { WaitingComponent } from './components/waiting/waiting.component';
 
 import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
-import { StoreDetailComponent } from './components/store-detail/store-detail.component';
-import { WaitingComponent } from './components/waiting/waiting.component';
+import { SignComponent } from './components/sign/sign.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent,
     HomeComponent,
-    SignInComponent,
     StoreComponent,
     MyInfoComponent,
     StoreDetailComponent,
     WaitingComponent,
+    SignComponent,
   ],
   imports: [
     BrowserModule,

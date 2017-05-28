@@ -23,7 +23,7 @@ export class AppComponent {
     let answer = confirm("Are you sure you want to sign out?");
     if (answer === true) {
       this.authService.signOutUser();
-      this.router.navigateByUrl('home/sign-in');
+      this.router.navigateByUrl('home');
     }
   }
 }

@@ -1,0 +1,64 @@
+<div id="buttons" *ngIf="!isAuth()">
+  <a (click)="setStatus('sign-in')">
+    <div id="sign-in" [ngStyle]="setStyle('sign-in')">Sign In</div>
+  </a>
+  <a (click)="setStatus('sign-up')">
+    <div id="sign-up" [ngStyle]="setStyle('sign-up')">Sign Up</div>
+  </a>
+</div>
+
+
+<div [ngSwitch]="status">
+  <!-- When user select sign in tab -->
+  <div *ngSwitchCase="'sign-in'">
+
+    <div class="login-field">
+      <table id="login_table">
+        <tr>
+          <td>
+            <img class="login_icon" src="../../../assets/icon/user.png" alt="user"/>
+          </td>
+          <td>
+            <input type="text" placeholder="Email" [(ngModel)]="user.email" autofocus>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img class="login_icon" src="../../../assets/icon/lock.png" alt="lock"/>
+          </td>
+          <td>
+            <input type="password" placeholder="Password" [(ngModel)]="user.password">
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="login-buttons">
+      <button id="btn-sign-in" (click)="signIn()">Sign In</button>
+      <button id="btn-facebook">Facebook</button>
+    </div>
+
+  </div>
+
+  <!-- When user select sign up tab -->
+  <div *ngSwitchCase="'sign-up'">
+    <select id="rule-select" [(ngModel)]="rule">
+      <option *ngFor="let rule of rules" [ngValue]="rule">{{rule}}</option>
+    </select>
+
+    <div class="sign-up-field" *ngIf="rule === 'Client'">
+        <input type="email" placeholder="Email" [(ngModel)]="user.email">
+        <input type="password" placeholder="Password" [(ngModel)]="user.password">
+        <input type="tel" placeholder="Tel">
+    </div>
+
+    <div class="sign-up-field" *ngIf="rule === 'Store'">
+        This is for store.
+    </div>
+
+    <div class="sign-up-button">
+        <button id="btn-sign-up" (click)="signUp()">Sign Up</button>
+    </div>
+  </div>
+
+</div>

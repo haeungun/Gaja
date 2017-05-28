@@ -2,26 +2,9 @@
    <img src="../assets/img/background.jpg">
 </div>
 
-<div id="buttons" *ngIf="!isAuth()">
-  <a routerLink="sign-in" routerLinkActive="active" (click)="setStatus('sign-in')">
-    <div id="sign-in" [ngStyle]="setStyle('sign-in')">Sign In</div>
-  </a>
-  <a routerLink="sign-up" routerLinkActive="active" (click)="setStatus('sign-up')">
-    <div id="sign-up" [ngStyle]="setStyle('sign-up')">Sign Up</div>
-  </a>
-</div>
-
-<router-outlet></router-outlet>
-
 <!-- 
   ngOnInit() doesn't load the component for first time
   I think its a bug of Angular2.
 -->
 
-<!--
-<div [ngSwitch]="status">
-  <div *ngSwitchCase="'sign'">Sign</div>
-  <div *ngSwitchCase="'sign-in'">Sign</div>
-  <div *ngSwitchCase="'sign-up'">Sign</div>
-</div>
--->
+<router-outlet></router-outlet>
