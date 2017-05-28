@@ -17,7 +17,7 @@ export class SignComponent implements OnInit {
   rules = ['Client', 'Store'];
   rule;
 
-  user = new UserData();
+  user = new UserData("","","","");
 
   constructor(private authService: AuthService,
               private router: Router,) { 
@@ -47,6 +47,20 @@ export class SignComponent implements OnInit {
     this.router.navigateByUrl('home/my-info');
   }
 
+  signUp() {
+    if (this.user.email.length < 1) {
+      alert("Input your email");
+      return;
+    }
+    if (this.user.password.length < 1) {
+      alert("Input your password");
+    }
+    if (this.user.tel.length < 1) {
+      alert("Input your phone number")
+    }
+    this.authService.signUpUser(this.user);
+    this.status = 'sign-in';
+  }
   isAuth() {
     return this.authService.isAuthenticated();
   }
