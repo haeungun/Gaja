@@ -3,9 +3,6 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-import { UserData } from '../models/user-data.model';
-import { StoreData } from '../models/store-data.model';
-
 @Injectable()
 export class AuthService {
 
@@ -13,16 +10,16 @@ export class AuthService {
                 public database: AngularFireDatabase) {}
 
     // Create account on firebase with email and password
-    signUpUser(user: UserData) {
-        this.auth.auth.createUserWithEmailAndPassword(user.email, user.password)
+    signUpUser(email, password) {
+        this.auth.auth.createUserWithEmailAndPassword(email, password)
             .catch(function (error) {
                 console.log(error);
             });
     }
 
     // Sign in with email and password
-    signInUser(user: UserData) {
-        this.auth.auth.signInWithEmailAndPassword(user.email, user.password)
+    signInUser(email, password) {
+        this.auth.auth.signInWithEmailAndPassword(email, password)
             .catch(function (error) {
                 console.log(error);
             });
@@ -34,12 +31,12 @@ export class AuthService {
     }
 
     // Save user information
-    saveUserData(user: UserData) {
+    saveUserData(user) {
         // TODO: When user sign up, user information should be stored.
     }
 
     // Save store information
-    saveStoreData(store: StoreData) {
+    saveStoreData(store) {
         // TODO
     }
 

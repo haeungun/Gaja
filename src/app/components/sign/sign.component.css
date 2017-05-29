@@ -24,7 +24,6 @@
     text-decoration: none;
 }
 
-
 /*** Sign in field ***/
 .login-field {
     width: 65%;
@@ -43,15 +42,12 @@ input {
 ::-webkit-input-placeholder {
     color: #BBBBBB;
 }
-
 #login_table {
     width: 100%;
 }
-
 .login_icon {
     height: 25px;
 }
-
 .login-buttons {
     width: 50%;
     max-width: 350px;

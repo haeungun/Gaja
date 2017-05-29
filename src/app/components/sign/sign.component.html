@@ -19,7 +19,7 @@
             <img class="login_icon" src="../../../assets/icon/user.png" alt="user"/>
           </td>
           <td>
-            <input type="text" placeholder="Email" [(ngModel)]="user.email" required>
+            <input type="text" placeholder="Email" [(ngModel)]="email" required>
           </td>
         </tr>
         <tr>
@@ -27,7 +27,7 @@
             <img class="login_icon" src="../../../assets/icon/lock.png" alt="lock"/>
           </td>
           <td>
-            <input type="password" placeholder="Password" [(ngModel)]="user.password" required>
+            <input type="password" placeholder="Password" [(ngModel)]="password" required>
           </td>
         </tr>
       </table>
@@ -49,18 +49,18 @@
     <!-- For Cilent -->
     <div class="sign-up-field" *ngIf="rule === 'Client'">
         Nickname
-        <input type="text" placeholder="Input the name you would like to call" [(ngModel)]="user.name">
+        <input type="text" placeholder="Input the name you would like to call" [(ngModel)]="name">
         Email
-        <input type="email" placeholder="Input an email to use as your ID" [(ngModel)]="user.email">
+        <input type="email" placeholder="Input an email to use as your ID" [(ngModel)]="email">
         Password
-        <input type="password" placeholder="Input password more than 6 characters" [(ngModel)]="user.password">
+        <input type="password" placeholder="Input password more than 6 characters" [(ngModel)]="password">
     </div>
 
      <!-- For Restaurant -->
     <div class="sign-up-field" *ngIf="rule === 'Store'">
         This is for store
-        <input type="email" placeholder="Email" [(ngModel)]="user.email">
-        <input type="password" placeholder="Password" [(ngModel)]="user.password">
+        <input type="email" placeholder="Email" [(ngModel)]="email">
+        <input type="password" placeholder="Password" [(ngModel)]="password">
         <input type="tel" placeholder="Tel" required>
     </div>
 

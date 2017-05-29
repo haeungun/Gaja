@@ -10,28 +10,3 @@
     height: 250px;
 }
 
-#buttons {
-    width: 100%;
-    height: 65px;
-    background-color: #EAF0F4;
-    color: #BEBEBE;
-    font-size: 1.3em;
-}
-#sign-in {
-    width: 50%;
-    height: 100%;
-    float: left;
-    text-align: center;
-    padding-top: 20px;
-}
-#sign-up {
-    width: 50%;
-    height: 100%;
-    float: right;
-    text-align: center;
-    padding-top: 20px;
-}
-#sign-in a, #sign-up a {
-    color: #BEBEBE;
-    text-decoration: none;
-}

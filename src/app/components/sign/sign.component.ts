@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { UserData } from '../../models/user-data.model';
-
 import { AuthService } from '../../services/auth.service';
+
+import * as model from '../../models/builder';
 
 @Component({
   selector: 'app-sign',
@@ -14,10 +14,13 @@ export class SignComponent implements OnInit {
 
   status;
 
+  email;
+  password;
+  name;
+  tel;
+
   rules = ['Client', 'Store'];
   rule;
-
-  user = new UserData("","","","");
 
   constructor(private authService: AuthService,
               private router: Router,) { 
@@ -25,6 +28,7 @@ export class SignComponent implements OnInit {
       this.rule = this.rules[0];
   }
 
+  
   ngOnInit() {
   }
 
@@ -43,25 +47,42 @@ export class SignComponent implements OnInit {
 
   signIn() {
     this.status = 'sign';
-    this.authService.signInUser(this.user);
+    this.authService.signInUser(this.email, this.password);
     this.router.navigateByUrl('home/my-info');
   }
 
   signUp() {
-    if (this.user.email.length < 1) {
+    if (this.email.length < 1) {
       alert("Input your email");
       return;
     }
-    if (this.user.password.length < 1) {
+    if (this.password.length < 1) {
       alert("Input your password");
     }
-    if (this.user.tel.length < 1) {
+    if (this.tel.length < 1) {
       alert("Input your phone number")
     }
-    this.authService.signUpUser(this.user);
+
+    this.authService.signUpUser(this.email, this.password);
     this.status = 'sign-in';
   }
+  
+  userData() {
+        let user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(this.email)
+                                              .setName(this.name)
+                                              .setTel(this.tel)
+                                              .builder();
+
+  }
+
+  storeData() {
+      let store: model.BuilderPattern.Store = new model.BuilderPattern.StoreBuilder(this.email)
+                                              .builder();
+  }
+  
   isAuth() {
     return this.authService.isAuthenticated();
   }
+
+
 }
