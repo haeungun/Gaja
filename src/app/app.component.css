@@ -4,15 +4,17 @@
     height: 50px;
     top: 0;
     min-height: 22px;
-    background-color: white;
+    background-color: #FFFFFF;
     text-align: right;
     padding-top: 15px;
     z-index: 2;
+
 }
 #header a {
-    color: #A8BCC5;
+    color: #657083;
     font-size: 1.2em;
     margin-right: 20px;
+    z-index: 3;
 }
 #header hr {
     position: absolute;

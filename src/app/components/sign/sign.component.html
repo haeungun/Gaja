@@ -49,11 +49,13 @@
     <!-- For Cilent -->
     <div class="sign-up-field" *ngIf="rule === 'Client'">
         Nickname
-        <input type="text" placeholder="Input the name you would like to call" [(ngModel)]="name">
+        <input type="text" placeholder="What should we call you?" [(ngModel)]="name">
         Email
         <input type="email" placeholder="Input an email to use as your ID" [(ngModel)]="email">
         Password
         <input type="password" placeholder="Input password more than 6 characters" [(ngModel)]="password">
+        Tel
+        <input type="tel" placeholder="Input your phone number" [(ngModel)]="tel">
     </div>
 
      <!-- For Restaurant -->
@@ -62,6 +64,7 @@
         <input type="email" placeholder="Email" [(ngModel)]="email">
         <input type="password" placeholder="Password" [(ngModel)]="password">
         <input type="tel" placeholder="Tel" required>
+        Category
     </div>
 
     <div class="sign-up-button">

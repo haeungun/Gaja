@@ -40,7 +40,7 @@ export class SignComponent implements OnInit {
   setStyle(name) {
     let btnStyle = {
       'background-color': name === this.status ? 'white' : '#EAF0F4',
-      'color': name === this.status ? '#657083' : '#BEBEBE',
+      'color': name === this.status ? '#657083' : '#AAAAAA',
     }
     return btnStyle;
   }
@@ -68,7 +68,7 @@ export class SignComponent implements OnInit {
   }
   
   userData() {
-        let user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(this.email)
+    let user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(this.email)
                                               .setName(this.name)
                                               .setTel(this.tel)
                                               .builder();
@@ -76,8 +76,8 @@ export class SignComponent implements OnInit {
   }
 
   storeData() {
-      let store: model.BuilderPattern.Store = new model.BuilderPattern.StoreBuilder(this.email)
-                                              .builder();
+    let store: model.BuilderPattern.Store = new model.BuilderPattern.StoreBuilder(this.email)
+                                                .builder();
   }
   
   isAuth() {
