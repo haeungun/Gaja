@@ -29,4 +29,9 @@ export class HomeComponent implements OnInit {
   isAuth() {
     return this.authService.isAuthenticated();
   }
+
+  // If the user is a store, there should be a tab to manage the store.
+  isStore() {
+
+  }
 }

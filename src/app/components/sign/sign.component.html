@@ -60,11 +60,19 @@
 
      <!-- For Restaurant -->
     <div class="sign-up-field" *ngIf="rule === 'Store'">
-        This is for store
+        <p id="store">This is only for store</p>
+        Store name
+        <input type="text" placeholder="Your store name" [(ngModel)]="name">
+        Email
         <input type="email" placeholder="Email" [(ngModel)]="email">
+        Password
         <input type="password" placeholder="Password" [(ngModel)]="password">
-        <input type="tel" placeholder="Tel" required>
+        Tel
+        <input type="tel" placeholder="Tel" [(ngModel)]="tel">
         Category
+        <select id="category-select" [(ngModel)]="category">
+          <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
+        </select>
     </div>
 
     <div class="sign-up-button">

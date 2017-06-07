@@ -42,10 +42,10 @@ export namespace BuilderPattern {
 
     export class StoreBuilder {
         private email: string;
-        private name: string;
+        private title: string;
         private tel: string;
         private category: string;
-        private wating; // Current waiting list
+        //private wating?; // Current waiting list
 
         constructor(email: string) {
             this.email = email;
@@ -60,12 +60,12 @@ export namespace BuilderPattern {
             return this;
         }
 
-        get Name() {
-            return this.name;
+        get Title() {
+            return this.title;
         }
 
-        setName(v: string): StoreBuilder {
-            this.name = v;
+        setTitle(v: string): StoreBuilder {
+            this.title = v;
             return this;
         }
 
@@ -86,7 +86,7 @@ export namespace BuilderPattern {
             this.category = v;
             return this;
         }
-
+        /*
         get Waiting() {
             return this.wating;
         }
@@ -95,12 +95,13 @@ export namespace BuilderPattern {
             this.wating = v;
             return this;
         }
-
+        */
         builder(): Store {
             return new Store(this);
         }
     }
 
+    // User model
     export class User {
         private email: string;
         private name: string;
@@ -124,28 +125,29 @@ export namespace BuilderPattern {
             return this.tel;
         }
     }
-    
+
+    // Store model
     export class Store {
         private email: string;
-        private name: string;
+        private title: string;
         private tel: string;
         private category: string;
         private wating;
 
         constructor(builder: StoreBuilder) {
             this.email = builder.Email;
-            this.name = builder.Name;
+            this.title = builder.Title;
             this.tel = builder.Tel;
             this.category = builder.Category;
-            this.wating = builder.Waiting;
+            //this.wating = builder.Waiting;
         }
 
         get Email() {
             return this.email;
         }
 
-        get Name() {
-            return this.name;
+        get Title() {
+            return this.title;
         }
 
         get Tel() {

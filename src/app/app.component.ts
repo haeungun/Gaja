@@ -34,4 +34,8 @@ export class AppComponent {
       this.router.navigateByUrl('home/sign');
     } 
   }
+
+  myStore() {
+    this.router.navigateByUrl('my-store');
+  }
 }

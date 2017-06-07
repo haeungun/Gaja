@@ -1,13 +1,20 @@
 import { Injectable } from '@angular/core';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Injectable()
 export class AuthService {
 
+    users: FirebaseListObservable<any>;
+    stores: FirebaseListObservable<any>;
+
     constructor(public auth: AngularFireAuth,
-                public database: AngularFireDatabase) {}
+                public database: AngularFireDatabase) {
+                    this.users = database.list('/users');
+                    this.stores = database.list('/stores');
+                }
+            
 
     // Create account on firebase with email and password
     signUpUser(email, password) {
@@ -32,12 +39,14 @@ export class AuthService {
 
     // Save user information
     saveUserData(user) {
-        // TODO: When user sign up, user information should be stored.
+        // Adding new user information in users node
+        this.users.push(user);
     }
 
     // Save store information
     saveStoreData(store) {
-        // TODO
+        // Adding new store in stores node
+        this.stores.push(store);
     }
 
     // Check if user is currently logged in
@@ -48,6 +57,11 @@ export class AuthService {
         } else {
             return false; 
         }
+    }
+
+    getCurrentUid() {
+        var uid = this.auth.auth.currentUser.uid;
+        return uid;
     }
 
 }

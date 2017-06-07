@@ -3,6 +3,7 @@
   <a (click)="showComponent()">home</a>
   <a routerLink="/store" routerLinkActive="active">store</a>
   <a id="logout" *ngIf="isAuth()" (click)="signOut()">logout</a>
+  <a id="mtStore" (click)="myStore()">my store</a>
   <hr>
 </div>
 <div id="home-router">

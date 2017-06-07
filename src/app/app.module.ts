@@ -22,6 +22,7 @@ import { WaitingComponent } from './components/waiting/waiting.component';
 import { AuthService } from './services/auth.service';
 import { environment } from '../environments/environment';
 import { SignComponent } from './components/sign/sign.component';
+import { MyStoreComponent } from './components/my-store/my-store.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SignComponent } from './components/sign/sign.component';
     StoreDetailComponent,
     WaitingComponent,
     SignComponent,
+    MyStoreComponent,
   ],
   imports: [
     BrowserModule,

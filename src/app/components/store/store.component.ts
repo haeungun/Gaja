@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class StoreComponent implements OnInit {
 
+  // Store examples
   stores = [
     {
       uid: "1234",

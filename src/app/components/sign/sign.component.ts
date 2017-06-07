@@ -18,9 +18,11 @@ export class SignComponent implements OnInit {
   password;
   name;
   tel;
-
-  rules = ['Client', 'Store'];
+  category;
   rule;
+
+  categories = ['Westrern', 'Korean', 'Chinese', 'Japanese'];
+  rules = ['Client', 'Store'];
 
   constructor(private authService: AuthService,
               private router: Router,) { 
@@ -45,12 +47,14 @@ export class SignComponent implements OnInit {
     return btnStyle;
   }
 
+  // Sign in button event
   signIn() {
     this.status = 'sign';
     this.authService.signInUser(this.email, this.password);
     this.router.navigateByUrl('home/my-info');
   }
 
+  // Sign up button event
   signUp() {
     if (this.email.length < 1) {
       alert("Input your email");
@@ -64,20 +68,35 @@ export class SignComponent implements OnInit {
     }
 
     this.authService.signUpUser(this.email, this.password);
+
+    if (this.rule === this.rules[0]) { // If user is client.
+      var user = this.userData();
+      this.authService.saveUserData(user);
+    } else if (this.rule === this.rules[1]) { // If user is store,
+      var store = this.storeData();
+      this.authService.saveStoreData(store);
+    }
+
+    // Set status value
     this.status = 'sign-in';
   }
   
   userData() {
-    let user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(this.email)
+    var user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(this.email)
                                               .setName(this.name)
                                               .setTel(this.tel)
                                               .builder();
-
+    return user;                                        
   }
 
   storeData() {
-    let store: model.BuilderPattern.Store = new model.BuilderPattern.StoreBuilder(this.email)
+    var store: model.BuilderPattern.Store = new model.BuilderPattern.StoreBuilder(this.email)
+                                                .setTitle(this.name)
+                                                .setTel(this.tel)
+                                                .setCategory(this.category)
                                                 .builder();
+                                              
+    return store;                                          
   }
   
   isAuth() {

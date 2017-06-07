@@ -112,7 +112,7 @@ select {
 /* IE 10, 11의 네이티브 화살표 숨기기 */ 
 select::-ms-expand { display: none; }
 
-#rule-select { 
+select { 
     width: 50%;
     padding: 7px 7px;
     margin-top: 30px;
@@ -124,4 +124,23 @@ select::-ms-expand { display: none; }
     -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
     -moz-appearance: none; 
     appearance: none; 
+}
+
+#category-select { 
+    width: 60%;
+    padding: 7px 7px;
+    margin-top: 5px;
+    margin-left: 10%;
+    font-family: inherit; 
+    border: 1px solid #BBBBBB; 
+    color: #AAAAAA;
+    border-radius: 4px; 
+    -webkit-appearance: none; /* 네이티브 외형 감추기 */ 
+    -moz-appearance: none; 
+    appearance: none; 
+}
+
+p#store {
+    color: #FF6666;
+    text-align: center;
 }
