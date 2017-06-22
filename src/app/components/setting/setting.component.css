@@ -1,0 +1,23 @@
+div#setting {
+    width: 100%;
+    margin: 20px;
+}
+input {
+    width: 90%;
+}
+h1#title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+#btn-upload {
+    width: 60%;
+    height: 35px;
+    font-size: 1.3em;
+    background-color: #657083;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-top: 30px;
+    margin-left: 15%;
+}

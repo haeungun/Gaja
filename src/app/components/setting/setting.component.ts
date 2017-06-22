@@ -21,6 +21,7 @@ export class SettingComponent implements OnInit {
 
   title;
   content;
+  tel;
 
   constructor(private service: AuthService,
               private database: AngularFireDatabase) { }
@@ -38,7 +39,7 @@ export class SettingComponent implements OnInit {
       let store_node = `stores/${this.uid()}`
       var iref = storageRef.child(logo_folder);
       iref.put(selectedFile).then((snapshot) => {
-        af.object(store_node).update({title: this.title, content: this.content, logo:logo_folder});
+        af.object(store_node).set({title: this.title, content: this.content, tel: this.tel, logo:logo_folder});
       });
     }
 

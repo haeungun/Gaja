@@ -35,7 +35,9 @@ export class StoreDetailComponent implements OnInit {
     this.auth.getUserInfoByUid(uid).subscribe(u => {
       user = u;
     });
+    this.auth.getUserInfoByUid(uid).update({store: this.store.key});
     this.service.addWaitingInStore(this.store.key, user);
+
   }
 
   getCurrentUid(){
