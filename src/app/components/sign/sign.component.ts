@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
 
-import * as model from '../../models/builder';
 
 @Component({
   selector: 'app-sign',
@@ -18,10 +17,9 @@ export class SignComponent implements OnInit {
   password;
   name;
   tel;
-  category;
   rule;
 
-  categories = ['Westrern', 'Korean', 'Chinese', 'Japanese'];
+  categories = ['Westrern', 'Korean', 'Chinese', 'Japanese', 'Dessert'];
   rules = ['Client', 'Store'];
 
   constructor(private authService: AuthService,
@@ -67,37 +65,13 @@ export class SignComponent implements OnInit {
       alert("Input your phone number")
     }
 
-    this.authService.signUpUser(this.email, this.password);
-
-    if (this.rule === this.rules[0]) { // If user is client.
-      var user = this.userData();
-      this.authService.saveUserData(user);
-    } else if (this.rule === this.rules[1]) { // If user is store,
-      var store = this.storeData();
-      this.authService.saveStoreData(store);
-    }
-
+    this.authService.signUpUser(this.email, this.password, this.name, this.tel, this.rule);
+    
     // Set status value
     this.status = 'sign-in';
   }
   
-  userData() {
-    var user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(this.email)
-                                              .setName(this.name)
-                                              .setTel(this.tel)
-                                              .builder();
-    return user;                                        
-  }
-
-  storeData() {
-    var store: model.BuilderPattern.Store = new model.BuilderPattern.StoreBuilder(this.email)
-                                                .setTitle(this.name)
-                                                .setTel(this.tel)
-                                                .setCategory(this.category)
-                                                .builder();
-                                              
-    return store;                                          
-  }
+  
   
   isAuth() {
     return this.authService.isAuthenticated();

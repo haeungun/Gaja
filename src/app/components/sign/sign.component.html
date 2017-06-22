@@ -64,15 +64,11 @@
         Store name
         <input type="text" placeholder="Your store name" [(ngModel)]="name">
         Email
-        <input type="email" placeholder="Email" [(ngModel)]="email">
+        <input type="email" placeholder="Input an email to use as your ID" [(ngModel)]="email">
         Password
-        <input type="password" placeholder="Password" [(ngModel)]="password">
+        <input type="password" placeholder="Input password more than 6 characters" [(ngModel)]="password">
         Tel
-        <input type="tel" placeholder="Tel" [(ngModel)]="tel">
-        Category
-        <select id="category-select" [(ngModel)]="category">
-          <option *ngFor="let category of categories" [ngValue]="category">{{category}}</option>
-        </select>
+        <input type="tel" placeholder="Input your phone number" [(ngModel)]="tel">
     </div>
 
     <div class="sign-up-button">

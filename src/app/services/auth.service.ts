@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
+import * as model from '../models/builder';
+
 @Injectable()
 export class AuthService {
 
@@ -17,8 +19,12 @@ export class AuthService {
             
 
     // Create account on firebase with email and password
-    signUpUser(email, password) {
+    signUpUser(email, password, name, tel, rule) {
+        let vm = this;
         this.auth.auth.createUserWithEmailAndPassword(email, password)
+            .then(function() {
+                vm.saveUserData(email, name, tel, rule);
+            })
             .catch(function (error) {
                 console.log(error);
             });
@@ -38,15 +44,40 @@ export class AuthService {
     }
 
     // Save user information
-    saveUserData(user) {
+    saveUserData(email, name, tel, rule) {
         // Adding new user information in users node
-        this.users.push(user);
+        let uid = this.getCurrentUid();
+        // Create user object
+        let user = this.userData(email, name, tel, rule);
+        // Push in database
+        this.database.object('/users/' + uid).set(user);
     }
 
-    // Save store information
-    saveStoreData(store) {
-        // Adding new store in stores node
-        this.stores.push(store);
+    userData(email, name, tel, rule) {
+        var user: model.BuilderPattern.User = new model.BuilderPattern.UserBuilder(email)
+                                                    .setName(name)
+                                                    .setTel(tel)
+                                                    .setRule(rule)
+                                                    .builder();
+        return user;                                        
+    }
+
+    userRule() {
+        if (this.isAuthenticated()) {
+            var rule;
+            let uid = this.getCurrentUid();
+
+            this.database.object('/users/' + uid).subscribe(info => {
+                rule = info.rule;
+            });               
+        }
+
+        return rule;
+    }
+
+    getCurrentUid() {
+        var uid = this.auth.auth.currentUser.uid;
+        return uid;
     }
 
     // Check if user is currently logged in
@@ -57,11 +88,6 @@ export class AuthService {
         } else {
             return false; 
         }
-    }
-
-    getCurrentUid() {
-        var uid = this.auth.auth.currentUser.uid;
-        return uid;
     }
 
 }

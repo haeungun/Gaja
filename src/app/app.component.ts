@@ -19,6 +19,14 @@ export class AppComponent {
     return this.authService.isAuthenticated();
   }
 
+  isStore() {
+    let rule = this.authService.userRule();
+    if (rule === "Store") {
+      return true;
+    }
+    return false;
+  }
+
   signOut() {
     let answer = confirm("Are you sure you want to sign out?");
     if (answer === true) {

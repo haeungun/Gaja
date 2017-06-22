@@ -3,6 +3,7 @@ export namespace BuilderPattern {
         private email: string;
         private name: string;
         private tel: string;
+        private rule: string;
 
         constructor(email: string) {
             this.email = email;
@@ -30,6 +31,15 @@ export namespace BuilderPattern {
             return this.tel;
         }
 
+        setRule(v: string): UserBuilder {
+            this.rule = v;
+            return this;
+        }
+
+        get Rule() {
+            return this.rule;
+        }
+
         setTel(v: string): UserBuilder {
             this.tel = v;
             return this;
@@ -41,23 +51,14 @@ export namespace BuilderPattern {
     }
 
     export class StoreBuilder {
-        private email: string;
         private title: string;
         private tel: string;
         private category: string;
+        private rule: string;
         //private wating?; // Current waiting list
 
-        constructor(email: string) {
-            this.email = email;
-        }
-
-        get Email() {
-            return this.email;
-        }
-
-        setEmail(v: string): StoreBuilder {
-            this.email = v;
-            return this;
+        constructor(title: string) {
+            this.title = title;
         }
 
         get Title() {
@@ -86,6 +87,15 @@ export namespace BuilderPattern {
             this.category = v;
             return this;
         }
+
+        setRule(v: string): StoreBuilder {
+            this.rule = v;
+            return this;
+        }
+
+        get Rule() {
+            return this.rule;
+        }
         /*
         get Waiting() {
             return this.wating;
@@ -106,11 +116,13 @@ export namespace BuilderPattern {
         private email: string;
         private name: string;
         private tel: string;
+        private rule: string;
 
         constructor(builder: UserBuilder) {
             this.email = builder.Email;
             this.name = builder.Name;
             this.tel = builder.Tel;
+            this.rule = builder.Rule;
         }
 
         get Email() {
@@ -124,28 +136,28 @@ export namespace BuilderPattern {
         get Tel() {
             return this.tel;
         }
+
+        get Rule() {
+            return this.rule;
+        }
     }
 
     // Store model
     export class Store {
-        private email: string;
         private title: string;
         private tel: string;
         private category: string;
+        private rule: string;
         private wating;
 
         constructor(builder: StoreBuilder) {
-            this.email = builder.Email;
             this.title = builder.Title;
             this.tel = builder.Tel;
             this.category = builder.Category;
+            this.rule = builder.Rule;
             //this.wating = builder.Waiting;
         }
-
-        get Email() {
-            return this.email;
-        }
-
+        
         get Title() {
             return this.title;
         }
@@ -158,6 +170,10 @@ export namespace BuilderPattern {
             return this.category;
         }
 
+        get Rule() {
+            return this.rule;
+        }
+        
         get Waiting() {
             return this.wating;
         }

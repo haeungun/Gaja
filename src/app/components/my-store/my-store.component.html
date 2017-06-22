@@ -1,12 +1,36 @@
-<p>My Store</p>
-<input type="text">
+<input>
 
-<p>content</p>
-<div class="wrap">
-<textarea id="content"></textarea>
+<div id="waiting-list" *ngFor="let waiting of waitingList">
+    <table class="waiting">
+        <tr>
+            <td id="waiting-name">{{waiting.name}}</td>
+            <td id="waiting-phone">{{waiting.phone}}</td>
+        </tr>
+    </table>
 </div>
+<!--
+<div id="edit-store">
+    <p>Store Name</p>
+    <input type="text">
 
-<p>menu</p>
-<button (click)="addMenu()">Add</button>
+    <input id="file" name="file" type="file">
+    <button (click)="upload()" type="button">Upload</button>
+
+    <p>content</p>
+    <div class="wrap">
+    <textarea id="content"></textarea>
+    </div>
+
+    <p>Category</p>
+
+
+    <p>Menu</p>
+    <button (click)="addMenu()">Add</button>
+    <div *ngFor="let menu">
+
+    </div>
+<div>
+
+    -->
 
 
