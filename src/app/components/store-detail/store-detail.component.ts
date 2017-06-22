@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { AuthService } from '../../services/auth.service';
 import { StoreService } from '../../services/store.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-store-detail',
@@ -17,7 +18,8 @@ export class StoreDetailComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,
               private auth: AuthService,
               private service: StoreService,
-              private router: Router) { 
+              private router: Router,
+              private sanitizer:DomSanitizer) { 
                 activatedRoute.queryParams.subscribe(
                   // Get a store 
                   params => (this.store = params));
@@ -43,5 +45,10 @@ export class StoreDetailComponent implements OnInit {
   getCurrentUid(){
     let uid = this.auth.getCurrentUid();
     return uid;  
+  }
+
+  sanitize(number:string){
+    let phone = 'tel://' + number;
+    return this.sanitizer.bypassSecurityTrustUrl(phone);
   }
 }

@@ -2,7 +2,7 @@
 
 <img id="store-img" src={{store.logo}} >
 
-<h3 id="tel">{{store.tel}}</h3>
+<h3 id="tel"><a [href]="sanitize( store.tel )">전화 걸기</a></h3>
 <h4 id="content">{{store.content}}</h4>
 
 <button id="wait" (click)="waitingRequest()">Waiting Request</button>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { StoreService } from '../../services/store.service'; 
 import { AuthService } from '../../services/auth.service';
+import {DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-waiting',
@@ -10,11 +11,13 @@ import { AuthService } from '../../services/auth.service';
 })
 export class WaitingComponent implements OnInit {
 
-  StoreName;
+  Store;
   TotalLength;
   Ranking;
   constructor( private auth: AuthService,
-              private service: StoreService) { 
+              private service: StoreService,
+              private sanitizer:DomSanitizer
+              ) { 
                 
               }
 
@@ -26,7 +29,7 @@ export class WaitingComponent implements OnInit {
     });
     let store_key = user.store;
     let store = this.service.getStoreByUid(store_key).subscribe( s => {
-      this.StoreName = s.title;
+      this.Store = s;
     });
     let waitingList = this.service.getWaitingList(store_key);
     waitingList.subscribe( people => {
@@ -38,6 +41,11 @@ export class WaitingComponent implements OnInit {
   getCurrentUid(){
     let uid = this.auth.getCurrentUid();
     return uid;  
+  }
+
+  sanitize(number:string){
+    let phone = 'tel://' + number;
+    return this.sanitizer.bypassSecurityTrustUrl(phone);
   }
 
 }

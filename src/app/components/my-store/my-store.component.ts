@@ -54,9 +54,12 @@ export class MyStoreComponent implements OnInit {
   }
 
   remove(wait) {
+    console.log(wait.uid);
+    
     let isRemove = confirm("삭제하시겠습니까?");
     if (isRemove) {
       this.service.getWaitingList(this.uid).remove(wait.$key);
+      this.auth.getUserInfoByUid(wait.uid).update({store: null});
     }
   }
 }
