@@ -2,10 +2,11 @@ button#wait {
     width: 400px;
     height: 40px;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 40px;
     background-color: #6699ff;
     color: white;
     border: none;
+    font-size: 1.3em;
 }
 
 img#store-img {
@@ -18,4 +19,9 @@ h1 {
 h4#content {
     margin-left: 10px;
     margin-right: 10px;
+}
+h3#tel {
+    margin-top: 10px;
+    text-align: center;
+    color: #CCCCCC;
 }

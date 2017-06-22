@@ -1,18 +1,4 @@
 
-
-.wrap {
-    width: 300px;
-}
-
-.wrap textarea {
-    width: 100%;
-    resize: none;
-    overflow-y: hidden; /* prevents scroll bar flash */
-    padding: 0.5em; /* prevents text jump on Enter keypress */
-    padding-bottom: 0.2em;
-    line-height: 1.6;
-}
-
 button#add {
     background-color: #009999;
     color: white;
@@ -20,32 +6,41 @@ button#add {
 }
 
 table.waiting {
-    margin-left: 10px;
+    width: 450px;
+    margin-left: 20px;
     margin-right: 10px;
     margin-top: 5px;
 }
 
 table.waiting tr {
-    width: 100%;
-    height: 50px;
 }
 
 table.waiting td#waiting-name {
-    width: 100%;
-    border: 1px solid #333333;
-    padding-left: 10px;
+    width: 200px;
+    padding-left: 15px;
+    font-size: 1.2em;
+    box-shadow: 5px 5px 5px #888888;
 }
 
 table.waiting td#waiting-phone {
-    width: 100%;
-    border: 1px solid #333333;
+    width: 50px;
+    background-color: #00cc99;
+    border: none;
+    color: white;
     padding-left: 10px;
     padding-right: 10px;
+    box-shadow: 5px 5px 5px #888888;
+
 }
 
 button#waiting-delete {
+    width: 70px;
     height: 50px;
     background-color: #FF4D4D;
     color: white;
     border: none;
+    box-shadow: 5px 5px 5px #888888;
+}
+a {
+    color: white;
 }

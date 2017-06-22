@@ -37,7 +37,7 @@ export class StoreDetailComponent implements OnInit {
     });
     this.auth.getUserInfoByUid(uid).update({store: this.store.key});
     this.service.addWaitingInStore(this.store.key, user);
-
+    alert("등록되었습니다.");
   }
 
   getCurrentUid(){

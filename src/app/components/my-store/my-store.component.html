@@ -2,34 +2,11 @@
     <table class="waiting">
         <tr>
             <td id="waiting-name">{{waiting.name}}</td>
-            <td id="waiting-phone"><a [href]="sanitize(waiting.tel)">문자 발송</a></td>
-            <td><button id="waiting-delete">Delete</button></td>
+            <td id="waiting-phone"><a [href]="sanitize(waiting.tel)">Message</a></td>
+            <td><button id="waiting-delete" (click)="remove(waiting)">Delete</button></td>
         </tr>
     </table>
 </div>
-<!--
-<div id="edit-store">
-    <p>Store Name</p>
-    <input type="text">
 
-    <input id="file" name="file" type="file">
-    <button (click)="upload()" type="button">Upload</button>
-
-    <p>content</p>
-    <div class="wrap">
-    <textarea id="content"></textarea>
-    </div>
-
-    <p>Category</p>
-
-
-    <p>Menu</p>
-    <button (click)="addMenu()">Add</button>
-    <div *ngFor="let menu">
-
-    </div>
-<div>
-
-    -->
 
 
