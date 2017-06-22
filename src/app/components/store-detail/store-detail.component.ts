@@ -13,18 +13,14 @@ export class StoreDetailComponent implements OnInit {
 
   private sub: any;
   private store;
-  private storeUid;;
 
   constructor(private activatedRoute: ActivatedRoute,
               private auth: AuthService,
               private service: StoreService,
               private router: Router) { 
                 activatedRoute.queryParams.subscribe(
-                  // Get a store uid
-                  params => (this.storeUid = params['store_uid']));
-                this.service.getStoreByUid(this.storeUid).subscribe(s =>{
-                  this.store = s;
-                });
+                  // Get a store 
+                  params => (this.store = params));
               }
 
   ngOnInit() {
@@ -35,8 +31,11 @@ export class StoreDetailComponent implements OnInit {
 
   waitingRequest() {
     let uid = this.getCurrentUid();
-    this.service.addWaitingInStore(this.storeUid, uid);
-    console.log("REQUEST");
+    let user;
+    this.auth.getUserInfoByUid(uid).subscribe(u => {
+      user = u;
+    });
+    this.service.addWaitingInStore(this.store.key, user);
   }
 
   getCurrentUid(){

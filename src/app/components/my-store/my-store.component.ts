@@ -5,8 +5,9 @@ import { Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 import * as firebase from 'firebase';
-import { AuthService } from '../../services/auth.service';
 
+import { AuthService } from '../../services/auth.service';
+import { StoreService } from '../../services/store.service'; 
 
 interface Image {
   path: string;
@@ -24,50 +25,20 @@ interface Image {
 export class MyStoreComponent implements OnInit {
 
   menus;
-  waitingList = [
-    {
-      name: "FIRST",
-      phone: "01012345678"
-    },{
-      name: "SECOND",
-      phone: "01012349999"
-    },{
-      name: "THIRD",
-      phone: "01011115678"
-    }
-  ];
+  waitingList = [];
 
-  constructor(private service: AuthService,
-              private database: AngularFireDatabase) { }
+  constructor(private auth: AuthService,
+              private service: StoreService,
+              private database: AngularFireDatabase) { 
+                let uid = this.auth.getCurrentUid();
+                this.service.getWaitingList(uid);
+                  //this.waitingList.push(w);
+                
+
+                //console.log(this.waitingList);
+              }
 
   ngOnInit() {
   }
 
-  addMenu() {
-    this.menus += "<input>"
-  }
-
-  /*
-  upload() {
-    let storageRef = firebase.storage().ref();
-    let success = false;
-    for(let selectedFile of [(<HTMLInputElement>document.getElementById('file')).files[0]]) {
-      console.log(selectedFile);
-      let af = this.database;
-      let folder = this.uid();
-      let path = `/${folder}/${selectedFile.name}`;
-      var iref = storageRef.child(path);
-      iref.put(selectedFile).then((snapshot) => {
-        af.list(path).push({path: path, filename: selectedFile.name});
-      });
-    }
-
-  }
-  */
-
-  uid() {
-    let uid = this.service.getCurrentUid();
-    console.log(uid);
-    return uid;
-  }
 }

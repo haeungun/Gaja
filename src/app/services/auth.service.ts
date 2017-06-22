@@ -80,6 +80,10 @@ export class AuthService {
         return uid;
     }
 
+    getUserInfoByUid(uid) {
+        return this.database.object('/users/' + uid);
+    }
+
     // Check if user is currently logged in
     isAuthenticated() {
         let user = this.auth.auth.currentUser;

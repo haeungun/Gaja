@@ -23,6 +23,7 @@ export class StoreComponent implements OnInit {
                     var pathReference = storage.ref(s.logo);
                     pathReference.getDownloadURL().then(function (logo_url) {
                       s.logo = logo_url;
+                      s.key = s.$key;
                       vm.stores.push(s);
                     });
                     
@@ -33,10 +34,8 @@ export class StoreComponent implements OnInit {
   ngOnInit() {
   }
 
-
   showStoreDetail(aStore) {
-    // Forward store uid
-    console.log(aStore.$key);
-    this.router.navigate(['/store-detail'], {queryParams: {'store_uid': aStore.$key}});
+    // Forward store
+    this.router.navigate(['/store-detail'], {queryParams: aStore});
   }
 }

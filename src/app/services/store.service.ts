@@ -16,12 +16,17 @@ export class StoreService {
         this.database.list('/stores/' + uid + '/waiting/').push(user);
     }
 
+    getWaitingList(uid) {
+        this.database.list('/stores/' + uid + '/waiting').subscribe(w => {
+            console.log(w);
+        });
+    }
+
     getStoreByUid(uid) {
         return this.database.object('/stores/' + uid);
     }
 
     getAllStore() {
-        console.log(this.database.list('/stores'));
         return this.database.list('/stores');
     }
 

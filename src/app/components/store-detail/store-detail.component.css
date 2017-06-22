@@ -1,9 +1,14 @@
 button#wait {
     width: 400px;
-    height: 30px;
+    height: 40px;
     margin: auto;
-    
+    margin-top: 10px;
     background-color: #6699ff;
     color: white;
     border: none;
+}
+
+img#store-img {
+    width: 100%;
+    
 }
