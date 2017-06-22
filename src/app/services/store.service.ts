@@ -17,9 +17,7 @@ export class StoreService {
     }
 
     getWaitingList(uid) {
-        this.database.list('/stores/' + uid + '/waiting').subscribe(w => {
-            console.log(w);
-        });
+        return this.database.list('/stores/' + uid + '/waiting');
     }
 
     getStoreByUid(uid) {
