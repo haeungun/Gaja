@@ -7,6 +7,7 @@ import { StoreComponent } from './components/store/store.component';
 import { StoreDetailComponent } from './components/store-detail/store-detail.component';
 import { MyInfoComponent } from './components/my-info/my-info.component';
 import { WaitingComponent } from './components/waiting/waiting.component';
+import { SettingComponent } from './components/setting/setting.component';
 import { MyStoreComponent } from './components/my-store/my-store.component';
 
 // Route Configuration
@@ -34,6 +35,9 @@ export const routes: Routes = [
       },{
         path: 'waiting',
         component: WaitingComponent,
+      },{
+        path: 'setting',
+        component: SettingComponent,
       },
     ]
   },{ 

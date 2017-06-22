@@ -24,6 +24,7 @@ import { environment } from '../environments/environment';
 import { SignComponent } from './components/sign/sign.component';
 import { MyStoreComponent } from './components/my-store/my-store.component';
 import { FavoriteComponent } from './components/favorite/favorite.component';
+import { SettingComponent } from './components/setting/setting.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FavoriteComponent } from './components/favorite/favorite.component';
     SignComponent,
     MyStoreComponent,
     FavoriteComponent,
+    SettingComponent,
   ],
   imports: [
     BrowserModule,
