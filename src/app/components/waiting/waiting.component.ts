@@ -11,13 +11,12 @@ import {DomSanitizer} from '@angular/platform-browser';
 })
 export class WaitingComponent implements OnInit {
 
-  Store;
-  TotalLength;
-  Ranking;
+  store;
+  totalLength;
+  ranking;
   constructor( private auth: AuthService,
               private service: StoreService,
-              private sanitizer:DomSanitizer
-              ) { 
+              private sanitizer:DomSanitizer) { 
                 
               }
 
@@ -28,13 +27,13 @@ export class WaitingComponent implements OnInit {
       user = u;
     });
     let store_key = user.store;
-    let store = this.service.getStoreByUid(store_key).subscribe( s => {
-      this.Store = s;
+    this.service.getStoreByUid(store_key).subscribe( s => {
+      this.store = s;
     });
     let waitingList = this.service.getWaitingList(store_key);
     waitingList.subscribe( people => {
-      this.TotalLength = people.length;
-      this.Ranking = people.findIndex(x => x.uid === uid ) + 1;
+      this.totalLength = people.length;
+      this.ranking = people.findIndex(x => x.uid === uid ) + 1;
     });
   }
 

@@ -15,9 +15,7 @@ export class MyInfoComponent implements OnInit {
   constructor(private router: Router,
               private auth: AuthService) { 
                 let uid = this.auth.getCurrentUid();
-                console.log(uid);
                 this.auth.getUserInfoByUid(uid).subscribe(info => {
-                  console.log(info);
                   this.myInfo = info;
                 });
               }
@@ -26,13 +24,15 @@ export class MyInfoComponent implements OnInit {
   }
 
   showComponent(component) {
-    this.isStore();
     if (component === "setting") {
       if (!this.isStore()) {
         alert("서비스 준비 중 입니다.");
+      } else {
+        this.router.navigateByUrl('home/' + component);
       }
+    } else {
+      this.router.navigateByUrl('home/' + component);
     }
-    this.router.navigateByUrl('home/' + component);
   }
 
   isStore() {

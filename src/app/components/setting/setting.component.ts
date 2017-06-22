@@ -47,7 +47,6 @@ export class SettingComponent implements OnInit {
 
   uid() {
     let uid = this.service.getCurrentUid();
-    console.log(uid);
     return uid;
   }
 }
