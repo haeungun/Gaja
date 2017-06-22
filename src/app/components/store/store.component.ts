@@ -22,8 +22,8 @@ export class StoreComponent implements OnInit {
                   store.forEach(s => {
                     var pathReference = storage.ref(s.logo);
                     pathReference.getDownloadURL().then(function (logo_url) {
-                      let store_info = {title: s.title, content: s.content, logo:logo_url};
-                      vm.stores.push(store_info);
+                      s.logo = logo_url;
+                      vm.stores.push(s);
                     });
                     
                   })
@@ -36,6 +36,7 @@ export class StoreComponent implements OnInit {
 
   showStoreDetail(aStore) {
     // Forward store uid
+    console.log(aStore.$key);
     this.router.navigate(['/store-detail'], {queryParams: {'store_uid': aStore.$key}});
   }
 }
