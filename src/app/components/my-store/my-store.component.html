@@ -1,8 +1,8 @@
-<div id="waiting-list" *ngFor="let waiting of waitingList">
+<div id="waiting-list" *ngFor="let waiting of waitingList | async">
     <table class="waiting">
         <tr>
-            <td id="waiting-name">{{waiting}}</td>
-            <td id="waiting-phone">{{waiting.phone}}</td>
+            <td id="waiting-name">{{waiting.name}}</td>
+            <td id="waiting-phone"><a [href]="sanitize(waiting.tel)">문자 발송</a></td>
             <td><button id="waiting-delete">Delete</button></td>
         </tr>
     </table>
