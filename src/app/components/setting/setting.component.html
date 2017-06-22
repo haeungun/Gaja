@@ -1,4 +1,6 @@
 title:
-<input id="title" type="text"><br>
+<input id="title" type="text" [(ngModel)]="title"><br>
 content:
-<input id="content" type="text"><br>
+<input id="content" type="text" [(ngModel)]="content"><br>
+<input id="file" name="file" type="file" >
+<button (click)="upload()" type="button">Upload</button>
