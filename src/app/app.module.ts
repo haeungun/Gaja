@@ -20,6 +20,8 @@ import { MyInfoComponent } from './components/my-info/my-info.component';
 import { WaitingComponent } from './components/waiting/waiting.component';
 
 import { AuthService } from './services/auth.service';
+import { StoreService } from './services/store.service';
+
 import { environment } from '../environments/environment';
 import { SignComponent } from './components/sign/sign.component';
 import { MyStoreComponent } from './components/my-store/my-store.component';
@@ -51,6 +53,7 @@ import { SettingComponent } from './components/setting/setting.component';
   ],
   providers: [
     AuthService,
+    StoreService,
   ],
   bootstrap: [AppComponent]
 })

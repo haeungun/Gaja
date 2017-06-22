@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
-
+import { AngularFireAuth } from 'angularfire2/auth';
+import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Injectable()
-export class AuthService {
+export class StoreService {
 
     constructor(private database: AngularFireDatabase) {}
 
@@ -12,11 +12,13 @@ export class AuthService {
         this.database.list('/stores').push(aStore);
     }
 
+
     getStoreByUid(uid) {
         return this.database.object('/stores/' + uid);
     }
 
     getAllStore() {
+        console.log(this.database.list('/stores'));
         return this.database.list('/stores');
     }
 

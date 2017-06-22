@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-store-detail',
   templateUrl: './store-detail.component.html',
@@ -22,6 +23,11 @@ export class StoreDetailComponent implements OnInit {
   }
 
   ngOnDestroy() {
+  }
+
+  waitingRequest() {
+
+    console.log("REQUEST");
   }
 
 }

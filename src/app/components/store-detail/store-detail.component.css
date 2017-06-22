@@ -1,0 +1,9 @@
+button#wait {
+    width: 400px;
+    height: 30px;
+    margin: auto;
+    
+    background-color: #6699ff;
+    color: white;
+    border: none;
+}

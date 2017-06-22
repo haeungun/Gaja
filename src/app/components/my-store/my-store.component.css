@@ -13,6 +13,12 @@
     line-height: 1.6;
 }
 
+button#add {
+    background-color: #009999;
+    color: white;
+    border: none;
+}
+
 table.waiting {
     margin-left: 10px;
     margin-right: 10px;
@@ -39,4 +45,7 @@ table.waiting td#waiting-phone {
 
 button#waiting-delete {
     height: 50px;
+    background-color: #FF4D4D;
+    color: white;
+    border: none;
 }
