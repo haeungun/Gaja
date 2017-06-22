@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
+import { AuthService } from '../../services/auth.service';
 import { StoreService } from '../../services/store.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class StoreDetailComponent implements OnInit {
   private storeUid;;
 
   constructor(private activatedRoute: ActivatedRoute,
+              private auth: AuthService,
               private service: StoreService,
               private router: Router) { 
                 activatedRoute.queryParams.subscribe(
@@ -32,8 +34,13 @@ export class StoreDetailComponent implements OnInit {
   }
 
   waitingRequest() {
-
+    let uid = this.getCurrentUid();
+    this.service.addWaitingInStore(this.storeUid, uid);
     console.log("REQUEST");
   }
 
+  getCurrentUid(){
+    let uid = this.auth.getCurrentUid();
+    return uid;  
+  }
 }

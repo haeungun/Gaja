@@ -12,6 +12,9 @@ export class StoreService {
         this.database.list('/stores').push(aStore);
     }
 
+    addWaitingInStore(uid, user) {
+        this.database.list('/stores/' + uid + '/waiting/').push(user);
+    }
 
     getStoreByUid(uid) {
         return this.database.object('/stores/' + uid);
