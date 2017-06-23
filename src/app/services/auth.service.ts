@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
@@ -12,7 +13,8 @@ export class AuthService {
     stores: FirebaseListObservable<any>;
 
     constructor(public auth: AngularFireAuth,
-                public database: AngularFireDatabase) {
+                public database: AngularFireDatabase,
+                private router: Router) {
                     this.users = database.list('/users');
                     this.stores = database.list('/stores');
                 }
@@ -31,8 +33,9 @@ export class AuthService {
     }
 
     // Sign in with email and password
-    signInUser(email, password) {
+    signInUser(email, password, event) {
         this.auth.auth.signInWithEmailAndPassword(email, password)
+            .then(event)
             .catch(function (error) {
                 console.log(error);
             });

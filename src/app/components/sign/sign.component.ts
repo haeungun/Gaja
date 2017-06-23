@@ -48,8 +48,8 @@ export class SignComponent implements OnInit {
   // Sign in button event
   signIn() {
     this.status = 'sign';
-    this.authService.signInUser(this.email, this.password);
-    this.router.navigateByUrl('home/my-info');
+    this.authService.signInUser(this.email, this.password, this.showMyInfo);
+    
   }
 
   // Sign up button event
@@ -71,7 +71,9 @@ export class SignComponent implements OnInit {
     this.status = 'sign-in';
   }
   
-  
+  showMyInfo = function() {
+    this.router.navigateByUrl('home/my-info');
+  }
   
   isAuth() {
     return this.authService.isAuthenticated();
